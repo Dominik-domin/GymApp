@@ -1,0 +1,514 @@
+:root{
+    --kolor-bialy-tekstu: #fafaff;
+    --kolor-szary-tekstu: #afafaf;
+    --kolor-lekko-bialy-tekstu: #e0e0e0;
+    --kolor-niebieski: #058ed9;
+    --kolor-divow: #282828;
+}
+
+#app{
+  position: relative;
+}
+
+
+/* ------------------------------- */
+
+/* App.vue */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    background-color: #2f2f2f;
+  }
+  
+  .container {
+    margin: 50px 0;
+    overflow: hidden;
+  }
+  
+  .header {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    background-color: #2a2a2a;
+    padding: 12px 5px;
+    font-size: 0.75rem;
+    color: #fafaff;
+    text-align: center;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+    font-family: sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .logo {
+    background-color: #00e676;
+    border-radius: 12px;
+    padding: 2px;
+    font-size: 26px;
+  }
+
+  header .fa-bars {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    font-size: 1.5rem;
+  }
+  
+  input,
+  textarea,
+  button,
+  select,
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .disableArrowLeft {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+  }
+  
+  .fa-arrow-left {
+    position: fixed;
+    top: 4%;
+    left: 4%;
+    transform: translateY(-50%);
+    z-index: 4;
+    color: #fafaff;
+    font-size: 1.9rem;
+  }
+
+/* ------------------------------- */
+
+/* BazaCwiczen.vue */
+
+#PlanyTreningowe{
+  margin-top: 10px;
+}
+
+.headerBox {
+    text-align: center;
+    padding: 10px;
+    color: var(--kolor-bialy-tekstu);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: 100%;
+    border-bottom: 1px solid #3f3f3f;
+    box-sizing: border-box;
+  }
+  
+  .headerBox h2 {
+    
+    padding-bottom: 5px;
+    font-weight: 400;
+  }
+  
+  .excBox {
+    position: absolute;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 40px;
+    width: 100%;
+  }
+  
+  .btnBox {
+    flex-basis: 30%;
+    padding: 5px 10px;
+    margin: 10px 0;
+  }
+  
+  .btnBox button {
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    font-size: 1.2rem;
+    color: var(--kolor-bialy-tekstu);
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  .btnBox h4 {
+    color: var(--kolor-szary-tekstu);
+  }
+
+/* ------------------------------- */
+
+/* BZlistaCw.vue */
+
+.addBlur {
+    filter: blur(8px);
+  }
+  
+  /* nazwa partii + div, który dodaje nowe ćwiczenie */
+  
+  .namePartBox {
+    text-align: center;
+    padding: 10px;
+    color: var(--kolor-bialy-tekstu);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 10px;
+  }
+  .namePartBox h2 {
+    border-bottom: 1px solid #484848;
+    padding-bottom: 5px;
+    font-weight: 400;
+  }
+  
+  /* --------------------------- */
+  
+  /* przycisk "nowe ćwiczenie" */
+  
+  .addToPlanBox {
+    display: flex;
+    padding: 10px;
+    padding-left: 15px;
+    transition: 0.5s;
+  }
+  
+  .addToPlanBox:active {
+    background-color: #565857;
+  }
+  
+  .addToPlanBox .fa-plus {
+    font-size: 1.5rem;
+    color: var(--kolor-niebieski);
+  }
+  
+  .addToPlanBox p {
+    font-size: 1.3rem;
+    margin-left: 10px;
+    color: var(--kolor-niebieski);
+  }
+  /* --------------------------- */
+  
+  /* lista wszystkich ćwiczeń */
+  
+  .cwiczenie {
+    padding: 20px 5px;
+    font-size: 1rem;
+    font-family: sans-serif;
+  }
+
+  .cwiczenieDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .cwiczenieDiv p {
+    color: var(--kolor-lekko-bialy-tekstu);
+    width: 85%;
+    margin-left: 10px;
+  }
+
+  .cwiczenieDiv section{
+      width: 15%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .cwiczenieDiv section .inputCheckbox{
+      transform: scale(1.5);
+  }
+  
+  /* dodawanie cwiczenia */
+  
+  .addNewExc {
+    position: fixed;
+    background-color: #282828;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    transform: translateY(-50%);
+    padding: 15px 15px;
+    margin: 0 auto;
+  }
+  
+  .addNewExc h3 {
+    color: #fafaff;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 10px 0;
+  }
+  
+  .addNewExc .inputBox {
+    margin-bottom: 20px;
+    padding: 10px 0;
+  }
+  
+  .addNewExc .inputBox input {
+    padding: 3px 0;
+    font-size: 1.3rem;
+    width: 100%;
+    background-color: transparent;
+    color: #fafaff;
+    border: none;
+    border-bottom: 1px solid var(--kolor-szary-tekstu);
+  }
+  
+  .addNewExc .inputBox input:focus {
+    border-bottom: 1px solid var(--kolor-niebieski);
+    caret-color: var(--kolor-niebieski);
+  }
+  .addNewExc .inputBox input::placeholder {
+    color: var(--kolor-szary-tekstu);
+  }
+  
+  .addNewExc .btnsBox {
+    padding: 10px 0;
+    text-align: right;
+  }
+  
+  .addNewExc .btnsBox button {
+    margin: 0 10px;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--kolor-bialy-tekstu);
+  }
+  
+  .addNewExc .btnsBox .emptyInputBtn {
+    margin: 0 10px;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--kolor-szary-tekstu);
+  }
+
+  /* --------------------------- */
+
+/* ZMIANA NAZWY CWICZENIA I USUWANIE */
+
+
+.addNewExc .fa-trash{
+  font-size: 1.5rem;
+  color: var(--kolor-bialy-tekstu);
+  margin-left: .5rem;
+}
+
+.addNewExc h4{
+  color: var(--kolor-niebieski);
+  padding: 10px 0;
+}
+
+.addNewExc .btnsBoxChange{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  text-align: right;
+}
+
+.addNewExc .btnsBoxChange button {
+  margin: 0 10px;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--kolor-bialy-tekstu);
+}
+
+.addNewExc .btnsBoxChange .emptyInputBtn {
+  margin: 0 10px;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--kolor-szary-tekstu);
+}
+
+
+
+/* --------------------------------------- */
+
+/* PlanyTreningowe.vue */
+
+#planyTreningowe {
+  position: relative;
+}
+
+.fa-plus-circle {
+  font-size: 2rem;
+  color: #fafaff;
+  position: fixed;
+  right: 5%;
+  top: 11px;
+  z-index: 2;
+}
+
+.addBlur {
+  filter: blur(8px);
+}
+
+/*  Divy z nazwami planów  */
+
+.planBox {
+  box-sizing: border-box;
+  color: #fafaff;
+  padding: 10px;
+}
+
+a {
+  color: #fafaff;
+}
+
+.trainingsDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.planBox {
+  position: relative;
+}
+
+.planBox h1 {
+  color: var(--kolor-bialy-tekstu);
+  font-size: 1.4rem;
+}
+
+.planBox .fa-trash {
+  font-size: 1.6rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.trainingsDiv p {
+  color: var(--kolor-szary-tekstu);
+  padding-right: 5px;
+  font-size: 1rem;
+}
+
+/* Tworzenie nowego planu */
+
+.createNewPlan {
+  position: fixed;
+  background-color: var(--kolor-divow);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  right: 5%;
+  padding: 15px 15px;
+  margin: 0 auto;
+  color: var(--kolor-bialy-tekstu);
+}
+
+.createNewPlan h3 {
+  color: var(--kolor-bialy-tekstu);
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 10px 0;
+  border-bottom: 1px solid #484848;
+}
+
+.createNewPlan .inputBox  {
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+.createNewPlan .inputBox p{
+  padding: 10px 0;
+}
+
+.createNewPlan .inputBox input {
+  padding: 3px 0;
+  font-size: 1.3rem;
+  width: 100%;
+  background-color: transparent;
+  color: #fafaff;
+  border: none;
+  border-bottom: 1px solid var(--kolor-szary-tekstu);
+}
+
+.createNewPlan .inputBox input:focus {
+  border-bottom: 1px solid var(--kolor-niebieski);
+  caret-color: var(--kolor-niebieski);
+}
+.createNewPlan .inputBox input::placeholder {
+  color: var(--kolor-szary-tekstu);
+}
+
+.createNewPlan .btnsBox {
+  padding: 10px 0;
+  text-align: right;
+}
+
+.createNewPlan .btnsBox button {
+  margin: 0 10px;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--kolor-bialy-tekstu);
+}
+
+/* Usuwanie planu */
+
+section.deletePlanSection {
+  background-color: var(--kolor-divow);
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  right: 5%;
+  color: var(--kolor-bialy-tekstu);
+  padding: 15px;
+}
+
+section.deletePlanSection h3 {
+  color: #fafaff;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding: 10px 0;
+}
+
+section.deletePlanSection p {
+  padding: 10px 0;
+  color: var(--kolor-niebieski);
+  font-size: 1.4rem;
+}
+
+section.deletePlanSection .deleteBtnsBox {
+  text-align: right;
+  padding: 10px 0;
+}
+
+section.deletePlanSection .deleteBtnsBox button {
+  margin: 0 10px;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--kolor-bialy-tekstu);
+}
+
+/* ------------------------------------- */
+
